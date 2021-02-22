@@ -14,16 +14,28 @@
     background: var(--gray-line);
     margin: 0 1.5rem;
     position: relative;
+    transition: height 0.5s;
+}
+
+.experience-bar > div:hover {
+    height: 10px;
+
 }
 
 .experience-bar > div > div {
     height:4px;
     border-radius: 4px;
-    background: var(--green) ;
+    background: var(--green);
+    transition: height 0.5s;
+}
+
+.experience-bar > div > div:hover {
+    height: 10px;
 }
 
 span.current-experience {
     position: absolute;
     top: 12px;
     transform: translateX(-50%);
+    transition: opacity 6s;
 }
