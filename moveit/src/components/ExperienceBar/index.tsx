@@ -5,7 +5,7 @@ import './styles.css';
 export function ExperienceBar() {
     const [hover, setHover] = useState(false);
 
-    function onHover() {
+    function onMouseOver() {
         setHover(true);
     }
 
@@ -17,7 +17,7 @@ export function ExperienceBar() {
         <header className="experience-bar">
             <span>0 xp</span>
             <div 
-                onMouseOver={onHover} 
+                onMouseOver={onMouseOver} 
                 onMouseLeave={onMouseLeave}
                 style={hover ? { height: 10 } : {}}
             >
