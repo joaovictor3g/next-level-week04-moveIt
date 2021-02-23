@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import styles from '../styles/components/CountDown.module.css';
+import { Button } from './Button';
 
 export function CountDown() {
-    const [time, setTime] = useState(25*60);
+    const [time, setTime] = useState(0.1*60);
     const [active, setActive] = useState(false);
 
     const minutes = Math.floor(time/60);
@@ -41,16 +42,34 @@ export function CountDown() {
                     <span>{secondLeft}</span>
                     <span>{secondRight}</span>
                 </div>
-
             </div>
 
-            <button 
-                type="button" 
-                onClick={startCountDown} 
-                className={styles.countDownButton}
-            >
-                Iniciar um ciclo
-            </button>
+            {
+                time != 0 ?
+                    (active ?
+                        <Button 
+                            onClick={startCountDown}
+                            className={styles.countDownButtonGiveUp}
+                            
+                        >
+                            Abandonar cliclo
+                            <img src={"icons/close.svg"} alt="img" />
+                        </Button>
+                        :       
+                        <Button 
+                            onClick={startCountDown}
+                            className={styles.countDownButtonStart}
+                        >
+                            Iniciar ciclo
+                        </Button>)
+                        :   
+                        (<Button 
+                            className={styles.countDownButtonFinalized}
+                        >
+                            Ciclo finalizado
+                            <div />
+                        </Button>)
+            }
         </div>
     )
 }
