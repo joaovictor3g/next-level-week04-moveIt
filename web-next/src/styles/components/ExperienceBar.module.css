@@ -1,13 +1,13 @@
-.experience-bar {
+.experienceBar {
     display: flex;
     align-items: center;
 }
 
-.experience-bar span {
+.experienceBar span {
     font-size: 1rem;
 }
 
-.experience-bar > div {
+.experienceBar > div {
     flex: 1;
     height: 4px;
     border-radius: 4px;
@@ -17,23 +17,23 @@
     transition: height 0.5s;
 }
 
-.experience-bar > div:hover {
+.experienceBar > div:hover {
     height: 10px;
 
 }
 
-.experience-bar > div > div {
+.experienceBar > div > div {
     height:4px;
     border-radius: 4px;
     background: var(--green);
     transition: height 0.5s;
 }
 
-.experience-bar > div > div:hover {
+.experienceBar > div > div:hover {
     height: 10px;
 }
 
-span.current-experience {
+span.currentExperience {
     position: absolute;
     top: 12px;
     transform: translateX(-50%);

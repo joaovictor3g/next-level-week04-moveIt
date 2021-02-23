@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-
-import './styles.css';
+import styles from '../styles/components/ExperienceBar.module.css';
 
 export function ExperienceBar() {
     const [hover, setHover] = useState(false);
@@ -14,7 +13,7 @@ export function ExperienceBar() {
     }
 
     return (
-        <header className="experience-bar">
+        <header className={styles.experienceBar}>
             <span>0 xp</span>
             <div 
                 onMouseOver={onMouseOver} 
@@ -25,7 +24,7 @@ export function ExperienceBar() {
                     style={hover ? { width: '50%', height: 10 } : { width: '50%', height: 4 }} 
                 />
                 {hover &&
-                    <span style={{ left: '50%' }} className="current-experience">300 xp</span>
+                    <span style={{ left: '50%' }} className={styles.currentExperience}>300 xp</span>
                 }
             </div>
             <span>600 xp</span>
