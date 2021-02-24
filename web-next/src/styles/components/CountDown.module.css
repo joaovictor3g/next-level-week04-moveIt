@@ -87,3 +87,9 @@
     color: var(--title);
     cursor: not-allowed;
 }
+
+@media(max-width:1200px) {
+    .experienceBar {
+        margin-left: 5rem;
+    }
+}

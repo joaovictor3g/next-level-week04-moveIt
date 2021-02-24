@@ -39,3 +39,9 @@ span.currentExperience {
     transform: translateX(-50%);
     transition: opacity 6s;
 }
+
+@media(max-width:1200px) {
+    .experienceBar {
+        margin-left: 5rem;
+    }
+}

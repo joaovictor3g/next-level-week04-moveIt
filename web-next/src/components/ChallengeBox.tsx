@@ -9,7 +9,7 @@ export function ChallengeBox() {
         <div className={styles.challengeBoxContainer}>
             { activeChallenge ? (
                 <div className={styles.challengeActive}>
-                    <header>Ganhe { activeChallenge.amount }</header>
+                    <header>Ganhe {activeChallenge.amount}</header>
 
                     <main>
                         <img src={`icons/${activeChallenge.type}.svg`} alt=""/>
@@ -18,6 +18,7 @@ export function ChallengeBox() {
                     </main>
 
                     <footer>
+                        
                         <button 
                             type="button"
                             className={styles.challengeFailedButton}
@@ -31,6 +32,7 @@ export function ChallengeBox() {
                         >
                             Completei
                         </button>
+                        
                     </footer>
                 </div>
             ) : (

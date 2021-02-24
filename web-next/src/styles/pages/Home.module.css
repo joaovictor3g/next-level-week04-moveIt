@@ -16,11 +16,10 @@
     align-items: center;
 }
 
-@media(max-width: 770px) {
+@media(max-width: 1000px) {
     .container section {
         display: block;
         text-align: center;
-        
         height: 100%;
         padding: 2rem;
        
@@ -33,5 +32,11 @@
 
     .challengeContainerSection {
         margin-bottom: 2rem;
+    }
+}
+
+@media(max-width:1170px) {
+    .container section {
+        margin-left: 4rem;
     }
 }
