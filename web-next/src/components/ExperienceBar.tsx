@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { ChallengesContext } from '../contexts/ChallengesContext';
 import styles from '../styles/components/ExperienceBar.module.css';
 
 export function ExperienceBar() {
@@ -12,6 +13,10 @@ export function ExperienceBar() {
         setHover(false);
     }
 
+    const { currentExperience, experienceToNextLevel } = useContext(ChallengesContext);
+
+    const progress = (Math.round(currentExperience *100)/experienceToNextLevel);
+
     return (
         <header className={styles.experienceBar}>
             <span>0 xp</span>
@@ -21,13 +26,13 @@ export function ExperienceBar() {
                 style={hover ? { height: 10 } : {}}
             >
                 <div 
-                    style={hover ? { width: '50%', height: 10 } : { width: '50%', height: 4 }} 
+                    style={hover ? { width: `${progress}%`, height: 10 } : { width: `${progress}%`, height: 4 }} 
                 />
                 {hover &&
-                    <span style={{ left: '50%' }} className={styles.currentExperience}>300 xp</span>
+                    <span style={{ left: `${progress}%` }} className={styles.currentExperience}>{currentExperience} xp</span>
                 }
             </div>
-            <span>600 xp</span>
+            <span>{experienceToNextLevel} xp</span>
         </header>
     )
 }
