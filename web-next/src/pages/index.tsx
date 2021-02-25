@@ -8,6 +8,9 @@ import Head from 'next/head';
 import styles from '../styles/pages/Home.module.css';
 import { ChallengeBox } from "../components/ChallengeBox";
 import { AsideBar } from "../components/AsideBar";
+import React from "react";
+import { ToggleButton } from "../components/ToggleButton";
+import { CountDownProvider } from "../contexts/CountDownContext";
 
 export default function Home() {
   return (
@@ -17,20 +20,22 @@ export default function Home() {
         <Head>
           <title>Início | MoveIt</title>
         </Head>
-      
+        <ToggleButton />
         <ExperienceBar />
 
-        <section>
-          <div >
-            <Profile />
-            <CompletedChallenges />
-            <CountDown />
-          </div>
-
-          <div className={styles.challengeContainerSection}>
-            <ChallengeBox />
-          </div>
-        </section>
+        <CountDownProvider>
+          <section>
+            <div >
+              <Profile />
+              <CompletedChallenges />
+              <CountDown />
+            </div>
+    
+            <div className={styles.challengeContainerSection}>
+              <ChallengeBox />
+            </div>
+          </section>
+        </CountDownProvider>
       </div> 
     </> 
   )
