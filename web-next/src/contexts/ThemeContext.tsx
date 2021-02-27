@@ -8,13 +8,14 @@ interface ThemeContextData {
 
 interface ThemeProviderProps {
     children: ReactNode;
+    currentTheme: string;
 
 };
 
 export const ThemeContext = createContext({} as ThemeContextData);
 
-export function ThemeProvider({ children }: ThemeProviderProps) {
-    const [theme, setTheme] = useState('light');
+export function ThemeProvider({ children, ...rest }: ThemeProviderProps) {
+    const [theme, setTheme] = useState(rest.currentTheme);
 
     useEffect(() => {
         Cookie.set("currentTheme", theme)

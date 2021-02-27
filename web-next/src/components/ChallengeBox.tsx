@@ -20,7 +20,7 @@ export function ChallengeBox() {
     }
 
     return (
-        <div className={theme=='dark' ? `${styles.challengeBoxContainer} ${styles.challengeBoxContainerDark}` : styles.challengeBoxContainer}>
+        <div className={theme==='dark' ? `${styles.challengeBoxContainer} ${styles.challengeBoxContainerDark}` : styles.challengeBoxContainer}>
             { activeChallenge ? (
                 <div className={styles.challengeActive}>
                     <header>Ganhe {activeChallenge.amount}</header>
