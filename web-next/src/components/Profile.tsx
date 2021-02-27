@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 import { ThemeContext } from '../contexts/ThemeContext';
 import styles from '../styles/components/Profile.module.css';
@@ -6,13 +6,20 @@ import styles from '../styles/components/Profile.module.css';
 export function Profile() {
     const { level  } = useContext(ChallengesContext);
     const { theme } = useContext(ThemeContext);
+    const [name, setName] = useState('');
+    const [avatarUrl, setAvatarUrl] = useState('');
     
+    useEffect(() => { 
+        setName(sessionStorage.getItem('name'))
+        setAvatarUrl(sessionStorage.getItem('avatar_url'))
+    }, []);
+
     return (
         <div className={theme==='dark' ? `${styles.profileContainer} ${styles.profileContainerDark}`: styles.profileContainer }>
-            <img src={sessionStorage.getItem('avatar_url')} alt="Joao" />
+            <img src={name} alt="Joao" />
         
             <div>
-                <strong>{sessionStorage.getItem('name')}</strong>
+                <strong>{avatarUrl}</strong>
                 
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
