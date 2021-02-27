@@ -1,0 +1,1 @@
+export const currentTheme = localStorage.getItem('currentTheme');

@@ -1,4 +1,5 @@
-import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
+import Cookie from 'js-cookie';
 
 interface ThemeContextData {
     theme: string;
@@ -7,13 +8,18 @@ interface ThemeContextData {
 
 interface ThemeProviderProps {
     children: ReactNode;
+
 };
 
 export const ThemeContext = createContext({} as ThemeContextData);
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-    const [theme, setTheme] = useState('dark');
-    
+    const [theme, setTheme] = useState('light');
+
+    useEffect(() => {
+        Cookie.set("currentTheme", theme)
+    }, []);
+
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}> 
             {children}

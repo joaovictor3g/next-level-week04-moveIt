@@ -21,12 +21,12 @@ export default function Home() {
   return (
     <>
       {/* <AsideBar /> */}
+      <ToggleButton />
       <div className={theme==='dark' ? `${styles.dark}` : styles.container}>
         <div>
         <Head>
           <title>Início | MoveIt</title>
         </Head>
-        <ToggleButton />
         <ExperienceBar />
 
         <CountDownProvider>
