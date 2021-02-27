@@ -24,6 +24,13 @@ export default function Home() {
       sessionStorage.setItem('avatar_url', avatar_url);
 
     }
+
+    // try {
+    //   window.open('https://github.com/login/oauth/authorize', '_blank');
+
+    // } catch(err) {
+    //   console.log(err);
+    // }
   }
 
   return (
@@ -51,6 +58,8 @@ export default function Home() {
             onClick={handleNavigateToLogged}
           >
             <AiOutlineArrowRight size={25} color="#fff" />
+            {/* <FaGithub size={30} color="#ddd"/> */}
+            {/* <span>Continuar com GitHub</span> */}
           </button>
         </div>
       </section>

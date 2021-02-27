@@ -8,6 +8,7 @@ export function CountDown() {
     const { theme } = useContext(ThemeContext);
 
     const { 
+        widthVarying,
         minutes, 
         seconds,
         hasFinished,
@@ -57,6 +58,7 @@ export function CountDown() {
                    >
                        Abandonar cliclo
                        <img src={"icons/close.svg"} alt="img" />
+                       <div style={{ width: `${widthVarying}%` }}/>
                    </Button>
                    ) : (      
                    <Button 

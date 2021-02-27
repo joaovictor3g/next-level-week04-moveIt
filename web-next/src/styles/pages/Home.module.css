@@ -74,4 +74,15 @@
     padding: 16px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    text-align: center;
+    align-items: center;
+    /* novo */
+    /* width: 70%;
+    display: flex; */
+
 }
+/* 
+.continue button span {
+    font-size: 1.25rem;
+    margin-left: 1rem;
+} */
