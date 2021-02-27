@@ -5,20 +5,19 @@ import { FaMedal  } from 'react-icons/fa';
 export function AsideBar() {
     return (
         <div className={styles.asideBarContainer}>
-            <img src="icons/favicon.svg"/>
+            <img src="icons/logoAside.svg"/>
             
             <div>
-                <div>
+                <button>
+                    <AiOutlineHome size={30} color="#3173FB" />
                     <div />
-                    <button>
-                        <AiOutlineHome color="blue" size={30}/>
+                </button>
 
-                    </button>
-                </div>
-
-                {/* <button>
-                    <FaMedal color="blue" size={30}/>
-                </button> */}
+                <button>
+                    <FaMedal size={30} color="#3173FB"/>
+                    <div />
+                </button>
+                
             </div>
             
         </div>

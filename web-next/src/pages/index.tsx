@@ -1,49 +1,32 @@
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import { CountDown } from "../components/CountDown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
-
-import Head from 'next/head';
-
+import Link from 'next/link';
 import styles from '../styles/pages/Home.module.css';
-import { ChallengeBox } from "../components/ChallengeBox";
-import { AsideBar } from "../components/AsideBar";
-import React, { useContext } from "react";
-import { ToggleButton } from "../components/ToggleButton";
-import { CountDownProvider } from "../contexts/CountDownContext";
-import { ThemeContext } from "../contexts/ThemeContext";
 
+import { FaGithub } from 'react-icons/fa';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 export default function Home() {
-  const { theme } = useContext(ThemeContext);
-
-
   return (
-    <>
-      {/* <AsideBar /> */}
-      <ToggleButton />
-      <div className={theme==='dark' ? `${styles.dark}` : styles.container}>
-        <div>
-        <Head>
-          <title>Início | MoveIt</title>
-        </Head>
-        <ExperienceBar />
-
-        <CountDownProvider>
-          <section>
-            <div >
-              <Profile />
-              <CompletedChallenges />
-              <CountDown />
-            </div>
-    
-            <div className={styles.challengeContainerSection}>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountDownProvider>
+    <div className={styles.container}>
+      <div>
+        <img src="icons/background2.svg" width="50%" className={styles.imageBackgroung}/>
       </div>
-      </div> 
-    </> 
-  )
+      <section>
+        <img src="move-it.svg" width="100%"/>
+
+        <span>Bem-vindo</span>
+        <div className={styles.hintIcon}>
+          <FaGithub size={30} color="#ddd"/>
+          <p>Faça login com seu GitHub para prosseguir</p>
+        </div>
+        
+        <div className={styles.continue}>
+          <input placeholder="digite seu username"/>
+          <button>
+            <AiOutlineArrowRight size={25} color="#fff" />
+          </button>
+        </div>
+      </section>
+      
+    </div>
+  );
 }

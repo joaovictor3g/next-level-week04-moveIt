@@ -5,44 +5,41 @@
     background: var(--white);
     align-items: center;
     text-align: center;
-    margin-right: 5rem;
-    
-    padding: 2rem;
-    
-    
-}
-
-.asideBarContainer img {
-    height: 2.6rem;
-    width: 2.6rem;
-}
-
-.asideBarContainer  div  {
-    text-align: center;
-    align-items: center;
-
-}
-
-.asideBarContainer div div {
-    display: flex;
-    align-items: center;
-    text-align: center;
     justify-content: center;
+    margin-right: 2rem;
+    width: max-content;
+    padding: 1rem;
+
 }
 
-.asideBarContainer div div div {
+.asideBarContainer > div {
+    text-align: center;
+    
+    justify-content: center;
     position: absolute;
-    left: 0;
-    height: 3rem;
-    background: var(--blue);
-    width: 0.3rem;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    top: 50%;
 }
 
-
-.asideBarContainer div div button {
+.asideBarContainer div button {
+    width: 100%;
     background: transparent;
     border: 0;
-    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    text-align: center;
 }
+
+/* .asideBarContainer div button div {
+    width: 4px;
+    background:#3173FB;
+    height: 100%;
+    position: absolute;
+    left: 0;
+} */
+
+.asideBarContainer div button:last-child {
+    margin-top: 1rem;
+}
+

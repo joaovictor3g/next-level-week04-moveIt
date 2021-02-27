@@ -1,0 +1,104 @@
+.container {
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container > div {
+    padding: 2.5rem 2rem;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.dark {
+    background: #222;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.dark > div {
+    padding: 2.5rem 2rem;
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.container div section {
+    flex: 1;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
+    align-items: center;
+}
+
+.dark div section {
+    flex: 1;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
+    align-items: center;
+}
+
+
+@media(max-width: 1000px) {
+    .container div section {
+        display: block;
+        text-align: center;
+        height: 100%;
+        padding: 2rem;
+       
+    }
+
+    .container div section div {
+        margin-top: 2rem;
+        
+    }
+
+    .challengeContainerSection {
+        margin-bottom: 2rem;
+    }
+}
+
+@media(max-width:1170px) {
+    .container div section {
+        margin-left: 4rem;
+    }
+}
+
+/* DarkMedia */
+@media(max-width: 1000px) {
+    .dark {
+        height: max-content;
+    }
+
+    .dark div section {
+        display: block;
+        text-align: center;
+        height: 100%;
+        padding: 2rem;
+       
+    }
+
+    .dark div section div {
+        margin-top: 2rem;
+        
+    }
+
+    .challengeContainerSection {
+        margin-bottom: 2rem;
+    }
+}
+
+@media(max-width:1170px) {
+    .dark div section {
+        margin-left: 4rem;
+    }
+}
+
+
+
