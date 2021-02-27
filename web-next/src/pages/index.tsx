@@ -14,8 +14,8 @@ export default function Home() {
 
     if(name && avatar_url) {
       Router.push('/logged');
-      sessionStorage.setItem('name', name);
-      sessionStorage.setItem('avatar_url', avatar_url);
+      window.sessionStorage.setItem('name', name);
+      window.sessionStorage.setItem('avatar_url', avatar_url);
       
     }
   }
