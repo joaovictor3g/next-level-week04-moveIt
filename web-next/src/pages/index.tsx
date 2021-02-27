@@ -10,8 +10,8 @@ export default function Home() {
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    window.sessionStorage.setItem('name', 'name');
-    window.sessionStorage.setItem('avatar_url', 'avatar_url');
+    sessionStorage.setItem('name', 'name');
+    sessionStorage.setItem('avatar_url', 'avatar_url');
   }, []);
 
   async function handleNavigateToLogged() {
@@ -19,8 +19,8 @@ export default function Home() {
 
     if(name && avatar_url) {
       Router.push('/logged');
-      window.sessionStorage.setItem('name', name);
-      window.sessionStorage.setItem('avatar_url', avatar_url);
+      sessionStorage.setItem('name', name);
+      sessionStorage.setItem('avatar_url', avatar_url);
       
     }
   }
