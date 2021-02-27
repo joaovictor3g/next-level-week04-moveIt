@@ -16,10 +16,10 @@ export function Profile() {
 
     return (
         <div className={theme==='dark' ? `${styles.profileContainer} ${styles.profileContainerDark}`: styles.profileContainer }>
-            <img src={name} alt="Joao" />
+            <img src={avatarUrl} alt="Joao" />
         
             <div>
-                <strong>{avatarUrl}</strong>
+                <strong>{name}</strong>
                 
                 <p>
                     <img src="icons/level.svg" alt="Level"/>
