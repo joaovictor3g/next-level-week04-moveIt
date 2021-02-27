@@ -19,7 +19,7 @@ export default function Logged() {
 
   return (
     <>
-          <AsideBar />
+          {/* <AsideBar /> */}
           <ToggleButton />
           <div className={theme==='dark' ? `${styles.dark}` : styles.container}>
             <div>

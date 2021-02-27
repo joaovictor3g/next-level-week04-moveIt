@@ -9,10 +9,10 @@ export function Profile() {
     
     return (
         <div className={theme==='dark' ? `${styles.profileContainer} ${styles.profileContainerDark}`: styles.profileContainer }>
-            <img src="https://github.com/joaovictor3g.png" alt="Joao" />
+            <img src={sessionStorage.getItem('avatar_url')} alt="Joao" />
         
             <div>
-                <strong>João Victor</strong>
+                <strong>{sessionStorage.getItem('name')}</strong>
                 
                 <p>
                     <img src="icons/level.svg" alt="Level"/>

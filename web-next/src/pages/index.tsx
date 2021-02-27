@@ -1,10 +1,25 @@
-import Link from 'next/link';
+import Router from 'next/router';
 import styles from '../styles/pages/Home.module.css';
+import axios from 'axios';
 
 import { FaGithub } from 'react-icons/fa';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { useState } from 'react';
 
 export default function Home() {
+  const [userName, setUserName] = useState('');
+
+  async function handleNavigateToLogged() {
+    const { name, avatar_url } = (await axios.get(`https://api.github.com/users/${userName}`)).data;
+
+    if(name && avatar_url) {
+      Router.push('/logged');
+      sessionStorage.setItem('name', name);
+      sessionStorage.setItem('avatar_url', avatar_url);
+      
+    }
+  }
+
   return (
     <div className={styles.container}>
       <div>
@@ -20,8 +35,15 @@ export default function Home() {
         </div>
         
         <div className={styles.continue}>
-          <input placeholder="digite seu username"/>
-          <button>
+          <input 
+            placeholder="digite seu username"
+            value={userName}
+            onChange={e => setUserName(e.target.value)}
+          />
+          <button
+            type="button"
+            onClick={handleNavigateToLogged}
+          >
             <AiOutlineArrowRight size={25} color="#fff" />
           </button>
         </div>
