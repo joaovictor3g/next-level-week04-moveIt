@@ -4,10 +4,15 @@ import axios from 'axios';
 
 import { FaGithub } from 'react-icons/fa';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    window.sessionStorage.setItem('name', 'name');
+    window.sessionStorage.setItem('avatar_url', 'avatar_url');
+  }, []);
 
   async function handleNavigateToLogged() {
     const { name, avatar_url } = (await axios.get(`https://api.github.com/users/${userName}`)).data;
