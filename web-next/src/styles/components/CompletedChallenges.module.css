@@ -17,3 +17,11 @@
 .completedChallengesContainer span:last-child {
     font-size: 1.5rem;
 }
+
+.completedChallengesContainerDark {
+    border-bottom: 1px solid var(--white);
+}
+
+.completedChallengesContainerDark span {
+    color: var(--white);
+}

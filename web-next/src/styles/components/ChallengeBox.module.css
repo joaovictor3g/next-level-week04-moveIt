@@ -132,4 +132,20 @@
     filter: brightness(0.9);
 }
 
+/* ChallengeBoxDark */
 
+.challengeBoxContainerDark {
+    background: var(--title);
+    color: var(--white);
+}
+
+
+.challengeBoxContainerDark .challengeActive footer button {
+    background: var(--title);
+    border: 1px solid #454547;
+    
+}
+
+.challengeBoxContainerDark .challengeActive header {
+    border-bottom: 1px solid #454547;
+}

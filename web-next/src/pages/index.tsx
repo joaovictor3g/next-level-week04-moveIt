@@ -8,15 +8,21 @@ import Head from 'next/head';
 import styles from '../styles/pages/Home.module.css';
 import { ChallengeBox } from "../components/ChallengeBox";
 import { AsideBar } from "../components/AsideBar";
-import React from "react";
+import React, { useContext } from "react";
 import { ToggleButton } from "../components/ToggleButton";
 import { CountDownProvider } from "../contexts/CountDownContext";
+import { ThemeContext } from "../contexts/ThemeContext";
+
 
 export default function Home() {
+  const { theme } = useContext(ThemeContext);
+
+
   return (
     <>
       {/* <AsideBar /> */}
-      <div className={styles.container}>
+      <div className={theme==='dark' ? `${styles.dark}` : styles.container}>
+        <div>
         <Head>
           <title>Início | MoveIt</title>
         </Head>
@@ -36,6 +42,7 @@ export default function Home() {
             </div>
           </section>
         </CountDownProvider>
+      </div>
       </div> 
     </> 
   )

@@ -2,8 +2,11 @@ import { useContext } from 'react';
 import styles from '../styles/components/CountDown.module.css';
 import { Button } from './Button';
 import { CountDownContext } from '../contexts/CountDownContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 export function CountDown() {
+    const { theme } = useContext(ThemeContext);
+
     const { 
         minutes, 
         seconds,
@@ -21,12 +24,9 @@ export function CountDown() {
         .padStart(2, '0')
         .split('');
 
-
-    
-
     return (
-        <div>
-            <div className={styles.countDownContainer}>
+        <>
+            <div className={theme==='dark' ? `${styles.countDownContainer} ${styles.countDownContainerDark}` : styles.countDownContainer}>
                 <div>
                     <span>{minuteLeft}</span>
                     <span>{minuteRight}</span>
@@ -41,7 +41,7 @@ export function CountDown() {
             { hasFinished ?
                 (<Button
                     disabled 
-                    className={styles.countDownButton}
+                    className={theme==='dark' ? `${styles.countDownButtonDark} ${styles.countDownButton}`: styles.countDownButton}
                 >
                     Ciclo finalizado
                     <div />
@@ -51,7 +51,9 @@ export function CountDown() {
                    (<Button 
                        type="button"
                        onClick={resetCountDown}
-                       className={`${styles.countDownButton} ${styles.countDownButtonActive}`}
+                       className={theme==='dark' ? 
+                        `${styles.countDownButton} ${styles.countDownButtonActiveDark}` : 
+                        `${styles.countDownButton} ${styles.countDownButtonActive}`}
                    >
                        Abandonar cliclo
                        <img src={"icons/close.svg"} alt="img" />
@@ -65,6 +67,6 @@ export function CountDown() {
                        Iniciar ciclo
                    </Button>) 
             )}
-        </div>
+        </>
     )
 }

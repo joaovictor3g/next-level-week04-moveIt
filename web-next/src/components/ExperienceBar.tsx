@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { ChallengesContext } from '../contexts/ChallengesContext';
+import { ThemeContext, ThemeProvider } from '../contexts/ThemeContext';
 import styles from '../styles/components/ExperienceBar.module.css';
 
 export function ExperienceBar() {
@@ -14,11 +15,12 @@ export function ExperienceBar() {
     }
 
     const { currentExperience, experienceToNextLevel } = useContext(ChallengesContext);
+    const { theme } = useContext(ThemeContext);
 
     const progress = (Math.round(currentExperience *100)/experienceToNextLevel);
 
     return (
-        <header className={styles.experienceBar}>
+        <header className={theme==='dark' ? `${styles.experienceBar} ${styles.experienceBarDark}`: styles.experienceBar}>
             <span>0 xp</span>
             <div 
                 onMouseOver={onMouseOver} 

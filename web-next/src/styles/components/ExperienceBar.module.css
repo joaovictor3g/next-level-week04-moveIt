@@ -45,3 +45,12 @@ span.currentExperience {
         margin-left: 5rem;
     }
 }
+
+/* Dark */
+.experienceBarDark > span {
+    color: var(--white);
+}
+
+.experienceBarDark span.currentExperience {
+    color: var(--white);
+}

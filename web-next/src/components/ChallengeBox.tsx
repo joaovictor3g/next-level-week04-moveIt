@@ -1,15 +1,17 @@
 import { useContext } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 import { CountDownContext } from '../contexts/CountDownContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 import styles from '../styles/components/ChallengeBox.module.css';
 
 export function ChallengeBox() {
     const { activeChallenge, resetChallenge, completeChallenge } = useContext(ChallengesContext);
-    const { resetCountDown } = useContext(CountDownContext)
+    const { resetCountDown } = useContext(CountDownContext);
+    const { theme } = useContext(ThemeContext);
 
     function handleChallengSucceeded() {
         completeChallenge();
-        resetChallenge();
+        resetCountDown();
     }
 
     function handleChallengeFailed() {
@@ -18,7 +20,7 @@ export function ChallengeBox() {
     }
 
     return (
-        <div className={styles.challengeBoxContainer}>
+        <div className={theme=='dark' ? `${styles.challengeBoxContainer} ${styles.challengeBoxContainerDark}` : styles.challengeBoxContainer}>
             { activeChallenge ? (
                 <div className={styles.challengeActive}>
                     <header>Ganhe {activeChallenge.amount}</header>
