@@ -1,4 +1,5 @@
 import Router from 'next/router';
+import { GetServerSideProps } from 'next';
 import styles from '../styles/pages/Home.module.css';
 import axios from 'axios';
 
@@ -8,7 +9,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [userName, setUserName] = useState('');
-
+  
   useEffect(() => {
     sessionStorage.setItem('name', 'name');
     sessionStorage.setItem('avatar_url', 'avatar_url');
@@ -21,7 +22,7 @@ export default function Home() {
       Router.push('/logged');
       sessionStorage.setItem('name', name);
       sessionStorage.setItem('avatar_url', avatar_url);
-      
+
     }
   }
 

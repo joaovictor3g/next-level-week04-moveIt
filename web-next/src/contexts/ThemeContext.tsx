@@ -18,7 +18,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
     useEffect(() => {
         Cookie.set("currentTheme", theme)
-    }, []);
+    }, [theme]);
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}> 
