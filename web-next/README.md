@@ -19,7 +19,7 @@
 - `yarn` para instalar dependências
 - `yarn dev` para rodar em ambiente de desenvolvimento.
 
-<img src="/public/move-it.gif">
+<img src="./public/move-it.gif">
 
 
 ### 📈 Como contribuir?
