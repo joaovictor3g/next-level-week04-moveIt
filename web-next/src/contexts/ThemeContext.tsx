@@ -15,10 +15,10 @@ interface ThemeProviderProps {
 export const ThemeContext = createContext({} as ThemeContextData);
 
 export function ThemeProvider({ children, ...rest }: ThemeProviderProps) {
-    const [theme, setTheme] = useState(rest.currentTheme);
+    const [theme, setTheme] = useState('light');
 
     useEffect(() => {
-        Cookie.set("currentTheme", theme)
+        Cookie.set('currentTheme', theme);
     }, [theme]);
 
     return (

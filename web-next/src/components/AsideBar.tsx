@@ -1,22 +1,34 @@
 import styles from '../styles/components/AsideBar.module.css';
-import { AiOutlineHome } from 'react-icons/ai';
-import { FaMedal  } from 'react-icons/fa';
+import { BiHomeAlt } from 'react-icons/bi';
+import { FiAward  } from 'react-icons/fi';
+import React, { useContext, useState } from 'react';
+import Link from 'next/link';
+import { ThemeContext } from '../contexts/ThemeContext';
+interface AsideBarProps {
+    name: 'home' | 'award';
+}
 
-export function AsideBar() {
+export function AsideBar({ name }: AsideBarProps) {
+    const { theme, setTheme } = useContext(ThemeContext);
+
     return (
-        <div className={styles.asideBarContainer}>
-            <img src="icons/logoAside.svg"/>
+        <div className={theme==='light' ? styles.asideBarContainer : `${styles.asideBarContainer} ${styles.asideBarContainerDark}`}>
+            <img src="logoAside.svg"/>
             
             <div>
-                <button>
-                    <AiOutlineHome size={30} color="#3173FB" />
-                    <div />
-                </button>
-
-                <button>
-                    <FaMedal size={30} color="#3173FB"/>
-                    <div />
-                </button>
+                <Link href="/logged">
+                    <a title="logged" style={{ position: 'relative' }}>
+                        <BiHomeAlt size={30} color={name==='home' ? "#3173FB" : '#666666'}/>
+                        <div className={name==='home' && styles.selected}/>
+                    </a>
+                </Link>
+                
+                <Link href="/leaderBoard">
+                    <a title="leaderBoard">
+                    <FiAward size={30} color={name==='award' ? "#3173FB" : '#666666'}/>
+                    <div className={name==='award' && styles.selected}/>
+                    </a>
+                </Link>
                 
             </div>
             

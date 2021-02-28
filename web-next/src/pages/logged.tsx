@@ -23,15 +23,15 @@ interface HomeProps {
 
 export default function Logged(props: HomeProps) {
   const { theme } = useContext(ThemeContext);
-  console.log(props);
+  
+
   return (
-    <>
       <ChallengesProvider
         level={props.level}
         currentExperience={props.currentExperience}
         challengesCompleted={props.challengesCompleted}
       >
-          {/* <AsideBar /> */}
+          <AsideBar name="home"/>
           <ToggleButton />
           <div className={theme==='dark' ? `${styles.dark}` : styles.container}>
             <div>
@@ -56,8 +56,7 @@ export default function Logged(props: HomeProps) {
             </div>
           </div> 
         </ChallengesProvider>
-    
-    </> 
+  
   )
 }
 

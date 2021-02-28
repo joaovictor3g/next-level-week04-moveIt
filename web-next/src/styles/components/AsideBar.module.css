@@ -1,45 +1,58 @@
 .asideBarContainer {
+    flex: 1;
     position: absolute;
     left: 0;
     height: 100%;
     background: var(--white);
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+
     margin-right: 2rem;
     width: max-content;
+ 
+    bottom: 0;
+    
     padding: 1rem;
-
 }
 
 .asideBarContainer > div {
-    text-align: center;
-    
-    justify-content: center;
     position: absolute;
     top: 50%;
+    text-align: center;
+    
 }
 
-.asideBarContainer div button {
-    width: 100%;
+.asideBarContainer div > a  {
     background: transparent;
     border: 0;
     position: relative;
     display: flex;
     justify-content: space-between;
-
-    text-align: center;
+    font-size: 0;
 }
 
-/* .asideBarContainer div button div {
-    width: 4px;
-    background:#3173FB;
-    height: 100%;
-    position: absolute;
-    left: 0;
-} */
-
-.asideBarContainer div button:last-child {
+.asideBarContainer div > a:last-child {
     margin-top: 1rem;
 }
 
+.asideBarContainer div  a a {
+
+}
+
+/* .selected {
+    display: flex;
+    position: absolute;
+    left: 0;
+    background: #3173FB;
+    width: 4px;
+    height: 100%;
+
+} */
+
+/* Dark */
+
+.asideBarContainerDark {
+    background: var(--title);
+}
+
+.asideBarContainerDark  {
+    color: #fff;
+}

@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import React, {useContext, useEffect, useState} from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 import { ThemeContext } from "../contexts/ThemeContext";
@@ -12,10 +13,12 @@ export function ToggleButton(){
   useEffect(() => {
     if(isDarkMode) {
       setTheme('dark');
+      Cookies.set('currentTheme', 'dark');
 
     }
     else {
       setTheme('light');
+      Cookies.set('currentTheme', 'light');
     }
   }, [isDarkMode, theme]);
 

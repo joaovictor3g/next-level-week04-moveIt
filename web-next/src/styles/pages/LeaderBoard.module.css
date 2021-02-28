@@ -1,0 +1,124 @@
+.container {
+    padding: 2.5rem;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 992px;
+    width: 100%;
+}
+
+.content > strong {
+    font-size: 3rem;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    color: #2E384D;
+}
+
+.content > header {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.content > header span {
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #666666;
+}
+
+.content main {
+    margin-top: 2rem;
+    position: relative;
+}
+
+.content main .profile {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    
+}  
+
+.content main .profile > div {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+}
+
+.content main .profile > div > div {
+    margin-left: 1rem;
+    height: 100%;
+
+}
+
+.content main .profile > div > div strong {
+    font-family: Inter, sans-serif;
+    font-size: 1.3rem;
+}
+
+.content main .profile div > img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.content main .profile .level {
+    font-size: 3.75rem;
+    width: 10%;
+    text-align: center;
+    border-right: 2px solid #ddd;
+    padding: 1rem;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.content main .profile:first-child .level {
+    background: url('/icons/levelup.svg') no-repeat center;
+    background-size: contain;
+    border-right: 2px solid #ddd;
+
+}
+
+.content main .profile > span {
+    color: var(--blue);
+    font-size: 1rem;
+    font-family: Inter, sans-serif;
+}
+
+/* Dark */
+
+.containerDark {
+    background: #000;
+}
+
+.containerDark .content > strong {
+    color: var(--white);
+}
+
+.containerDark .content > header span {
+    color: var(--white);
+}
+
+
+.containerDark .content main .profile {
+    background: var(--title);
+}
+
+.containerDark .content main .profile > span {
+    color: var(--green);
+}
+
+.containerDark .content main .profile > div > div strong, 
+.containerDark .content main .profile > div > div {
+    color: var(--white);
+}
