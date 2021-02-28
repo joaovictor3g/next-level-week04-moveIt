@@ -17,7 +17,7 @@
     max-width: 400px;
     padding: 2rem 3rem;
     border-radius: 5px;
-    box-shadow: 0 0 6opx rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     text-align: center;
     position: relative;
 }
@@ -48,4 +48,26 @@
     background: transparent;
     border: 0;
     font-size: 0;
+}
+
+/* Dark */
+
+.overlayDark {
+    background: rgba(0,0,0, 0.9);
+}
+
+.overlayDark .container {
+    background: #454547;
+}
+
+.overlayDark .container header {
+    color: var(--white);
+}
+
+.overlayDark .container strong {
+    color: var(--white);
+}
+
+.overlayDark .container p {
+    color: var(--white);
 }

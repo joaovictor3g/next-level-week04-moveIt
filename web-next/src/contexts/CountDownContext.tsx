@@ -21,8 +21,8 @@ export const CountDownContext = createContext({} as CountDownContextData);
 let countDownTimeOut: NodeJS.Timeout;
 
 export function CountDownProvider({ children }: CountDownProviderProps) {
-    const [time, setTime] = useState(1*60);
-    let persistTime = Number((100/(1*60)).toFixed(2));
+    const [time, setTime] = useState(0.1*60);
+    let persistTime = Number((100/(0.1*60)).toFixed(2));
     const [active, setActive] = useState(false);
     const [hasFinished, setHasFinished] = useState(false);
 
@@ -40,7 +40,7 @@ export function CountDownProvider({ children }: CountDownProviderProps) {
     function resetCountDown() {
         clearTimeout(countDownTimeOut)
         setActive(false);
-        setTime(1*60);
+        setTime(0.1*60);
         setHasFinished(false);
         setWidthVarying(0);
     }
