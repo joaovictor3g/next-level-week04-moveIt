@@ -1,4 +1,4 @@
-# Move It
+#Move It
 
 ![Projeto](https://img.shields.io/badge/joaovictor3g-moveit-dark)
 ![licence mit](https://img.shields.io/badge/license-MIT-green)
@@ -19,7 +19,7 @@
 - `yarn` para instalar dependências
 - `yarn dev` para rodar em ambiente de desenvolvimento.
 
-<img src="web-next/public/move-it.gif">
+<img src="/public/move-it.gif">
 
 
 ### 📈 Como contribuir?
